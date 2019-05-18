@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './concerns/findable'
 
 class MusicLibraryController
@@ -92,8 +91,6 @@ class MusicLibraryController
       puts "Playing #{song.name} by #{song.artist.name}" 
     end    
   end
-  
 
-  
 end
   
