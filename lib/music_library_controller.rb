@@ -40,7 +40,7 @@ class MusicLibraryController
   
   def list_songs
     number = 1
-    Song.all.sort_by!{|s| s.name}.each do |song|
+    Song.all.sort_by{|s| s.name}.each do |song|
       puts "#{number}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       number += 1
     end
@@ -84,7 +84,7 @@ class MusicLibraryController
   
   def play_song
     puts "Which song number would you like to play?"
-    songs = Song.all.sort_by!{|s| s.name}
+    songs = Song.all.sort_by{|s| s.name}
     song_num = gets.chomp.to_i
     if song_num > 0 && song_num <= songs.size
       song = songs[song_num - 1]
